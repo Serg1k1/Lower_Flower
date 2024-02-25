@@ -1,6 +1,295 @@
 @import '../../style/mixins.scss';
 @import '../../style/style.scss';
 
-.header__container {
-    @include adaptiveValue("font-size", 60, 30);
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    padding-top: toRem(10);
+    padding-bottom: toRem(10);
+    &--scrolled {
+        background-color: #000;
+    }
+    // .header__container
+    &__container {
+        @include adaptiveValue("min-height", 60, 40);
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        @include adaptiveValue("column-gap", 70, 30, 0, 1110, 991);
+        align-items: center;
+    }
+    &__logo{
+        @include adaptiveValue("height", 60, 40);
+        position: relative;
+        @media (max-width: em(850)){
+            display: none;      
+        }
+    }
+    // .header__menu
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
+    // .header__info
+    &__info {
+        display: flex;
+        column-gap: toRem(20);
+        align-items: center;
+        @media (max-width: em(850)){
+            justify-self: end;      
+        }
+    }
+}
+.menu {
+    // .menu__icon
+    // &__icon {
+    //     display: none;
+    // }
+    // .menu__body
+    &__body {
+        display: flex;
+        @include adaptiveValue("column-gap", 50, 25, 0, 1110, 991);
+        @media (max-width: em(850)){
+            position: fixed;
+			width: 80%;
+			height: 100%;
+			left: 0%;
+			top: 0;
+			overflow: auto;
+			padding: toRem(50) toRem(15) toRem(15) toRem(30);
+			transition: left 0.3s;    
+            background-color: #000;  
+            flex-direction: column;
+        }
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:not(:last-child) {
+            margin-bottom: toRem(10);
+        }
+        @media (min-width: em(850)){
+            display: none;   
+        }
+    }
+    &__logo {
+        @include adaptiveValue("height", 60, 40);
+        position: relative;    
+    }
+    &__search {
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: toRem(10);
+        transition: all 0.3s ease;
+        &::before {
+            content: '';
+            width: toRem(18);
+            height: toRem(18);
+            background: url('../../assets/icons/search.svg') no-repeat center;
+        }
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: $cyanic;    
+            }
+        }
+
+        @media (max-width: em(850)){
+            order: 0;      
+        }
+    }
+    // .menu__list
+    &__list {
+        display: flex;
+        @include adaptiveValue("column-gap", 50, 25, 0, 1110, 991);
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: toRem(8);
+
+        @media (max-width: em(850)){
+            flex-direction: column;      
+            align-items: start;
+            order: 1;
+        }
+    }
+    // .menu__item
+    &__item {
+    }
+    // .menu__link
+    &__link {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: $cyanic;    
+            }
+        }
+    }
+}
+.info-menu {
+    // display: none;
+    // .info-menu__call
+    &__call {
+        img {
+            width: toRem(18);
+            height: toRem(18);
+            display: block;
+        }
+        display: flex;
+        align-items: center;
+        gap: toRem(10);
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+        @media (any-hover: hover){
+            &:hover{
+                color: $cyanic;       
+            }
+        }
+        @media (max-width: em(850)){
+              display: none;
+        }
+    }
+    // .info-menu__shop
+    &__shop {
+        padding: toRem(18);
+        position: relative;
+        &-icon {
+        }
+        &-buy {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: toRem(9);
+            top: toRem(10);
+            width: toRem(18);
+            height: toRem(18);
+            background-color: $cyanic;
+            border-radius: 50%;
+            font-weight: 400;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+            color: #142b2b;
+        }
+    }
+}
+
+
+
+
+
+
+// .menu {
+// 	// .menu__icon
+// 	&__icon {
+// 	}
+// 	// .menu__body
+// 	&__body {
+// 		@media (max-width: $mobile) {
+// 			position: fixed;
+// 			width: 100%;
+// 			height: 100%;
+// 			left: -100%;
+// 			top: 0;
+// 			overflow: auto;
+// 			padding: toRem(50) toRem(15) toRem(15) toRem(30);
+// 			transition: left 0.3s;
+// 			&::before {
+// 				content: "";
+// 				position: fixed;
+// 				width: 100%;
+// 				height: toRem(70);
+// 				left: -100%;
+// 				top: 0;
+// 				transition: left 0.3s;
+// 				z-index: 2;
+// 			}
+// 			.menu-open & {
+// 				left: 0;
+// 				&::before {
+// 					left: 0;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	// .menu__list
+// 	&__list {
+// 		@media (max-width: $mobile) {
+// 		}
+// 	}
+// 	// .menu__item
+// 	&__item {
+// 	}
+// 	// .menu__link
+// 	&__link {
+// 		@media (max-width: $mobile) {
+// 		}
+// 	}
+// }
+
+//Burger Icon
+.icon-menu {
+	display: none;
+	@media (max-width: em(850)) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: $cyanic;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		&.menu-open {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
 }
