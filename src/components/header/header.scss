@@ -53,15 +53,18 @@
         @include adaptiveValue("column-gap", 50, 25, 0, 1110, 991);
         @media (max-width: em(850)){
             position: fixed;
-			width: 80%;
+			width: 65%;
 			height: 100%;
-			left: 0%;
+			left: -100%;
 			top: 0;
 			overflow: auto;
-			padding: toRem(50) toRem(15) toRem(15) toRem(30);
+			padding: toRem(10) toRem(10) toRem(20) toRem(10);
 			transition: left 0.3s;    
             background-color: #000;  
             flex-direction: column;
+            &.body-open {
+                left: 0;    
+            }
         }
     }
     &__header {
@@ -76,12 +79,14 @@
         }
     }
     &__logo {
-        @include adaptiveValue("height", 60, 40);
-        position: relative;    
+        img {
+            @include adaptiveValue("height", 60, 50);
+            position: relative; 
+        }     
     }
     &__search {
         font-weight: 400;
-        font-size: 14px;
+        font-size: toRem(14);
         letter-spacing: 0.04em;
         text-transform: uppercase;
         display: flex;
@@ -104,6 +109,7 @@
 
         @media (max-width: em(850)){
             order: 0;      
+            margin-bottom: toRem(10);
         }
     }
     // .menu__list
@@ -112,12 +118,18 @@
         @include adaptiveValue("column-gap", 50, 25, 0, 1110, 991);
         align-items: center;
         flex-wrap: wrap;
-        row-gap: toRem(8);
+        row-gap: toRem(10);
 
         @media (max-width: em(850)){
             flex-direction: column;      
             align-items: start;
             order: 1;
+            &::after {
+                content: '';
+                width: toRem(100);
+                height: toRem(1);
+                background-color: #555;      
+            }    
         }
     }
     // .menu__item
@@ -127,7 +139,7 @@
     &__link {
         display: inline-block;
         font-weight: 400;
-        font-size: 14px;
+        font-size: toRem(14);
         letter-spacing: 0.04em;
         text-transform: uppercase;
         transition: all 0.3s ease;
@@ -137,6 +149,14 @@
                 text-decoration-skip-ink: none;
                 color: $cyanic;    
             }
+        }
+    }
+    &__footer{
+        display: none;
+        @media (max-width: em(850)){
+            margin-top: toRem(20);
+            display: block;
+            order: 2; 
         }
     }
 }
@@ -183,10 +203,81 @@
             background-color: $cyanic;
             border-radius: 50%;
             font-weight: 400;
-            font-size: 12px;
+            font-size: toRem(12);
             letter-spacing: 0.04em;
             color: #142b2b;
         }
+    }
+}
+
+.footer-menu {
+    &__info {
+        display: grid;
+        gap: toRem(10);
+        &:not(:last-child) {
+            margin-bottom: toRem(10);
+        }
+    }
+ // .footer-menu__info-item
+    &__info-item {
+
+    }
+
+    // .footer-menu__info-link
+    &__info-link {
+        font-size: toRem(14);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $cyanic;
+    }
+
+    // .footer-menu__info-text
+    &__info-text {
+        max-width: toRem(181);
+    }
+	
+    // .footer-menu__politics
+	&__politics {
+        display: flex;
+        flex-direction: column;
+        &:not(:last-child) {
+            margin-bottom: toRem(10);
+        }
+	}
+
+	// .footer-menu__confidantial
+	&__confidantial {
+        font-size: toRem(10);
+        letter-spacing: 0.04em;
+        color: #555;
+	}
+     
+    // .footer-menu__contacts
+    &__contacts {
+    }
+    
+    // .footer-menu__phone
+    &__phone {
+        &:not(:last-child) {
+            margin-bottom: toRem(20);
+        }
+        a {
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: underline;
+            color: #fff;
+        }
+    }
+    
+     // .footer-menu__icons
+    &__icons {
+        display: flex;
+        gap: toRem(20)
+    }
+    
+    // .footer-menu__icon
+    &__icon {
     }
 }
 
@@ -293,3 +384,4 @@
 		}
 	}
 }
+
