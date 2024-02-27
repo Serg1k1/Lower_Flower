@@ -20,13 +20,13 @@
         @include adaptiveValue("column-gap", 60, 30, 0, 1400, 991);
         align-items: center;
         &--desktop {
-            @media (max-width: em(850)){
+            @media (max-width: em(991)){
                 display: none;      
             }
         }
         &--mobile {
             display: none;
-            @media (max-width: em(850)){
+            @media (max-width: em(991)){
                 display: grid;      
                 grid-template-columns: 1fr 1fr 1fr;
 
@@ -36,7 +36,7 @@
     &__logo{
         @include adaptiveValue("height", 60, 40);
         position: relative;
-        @media (max-width: em(850)){
+        @media (max-width: em(991)){
             display: none;      
         }
     }
@@ -50,7 +50,7 @@
         display: flex;
         column-gap: toRem(20);
         align-items: center;
-        @media (max-width: em(850)){
+        @media (max-width: em(991)){
             justify-self: end;      
         }
     }
@@ -61,8 +61,9 @@
 }
 .menu {
     &--desktop {
-        
+        height: 100%;    
     }
+    
     &--mobile {
 
     }
@@ -71,13 +72,14 @@
         display: flex;
         @include adaptiveValue("column-gap", 50, 25, 0, 1110, 991);
         &--desktop {
-            @media (max-width: em(850)) {
+            height: 100%;
+            @media (max-width: em(991)) {
                 display: none;
             }     
         }
         &--mobile {
             display: none;
-            @media (max-width: em(850)){
+            @media (max-width: em(991)){
                 display: block;
                 position: fixed;
                 width: 65%;
@@ -102,7 +104,7 @@
         &:not(:last-child) {
             margin-bottom: toRem(10);
         }
-        @media (min-width: em(850)){
+        @media (min-width: em(991)){
             display: none;   
         }
     }
@@ -116,8 +118,6 @@
         flex: 1 1 auto;
         position: relative;
         background-color: transparent;
-        
-        
         &--open {
             position: absolute;
             top: 50%;
@@ -148,19 +148,19 @@
                 display: block;
             }
         }
-        @media (max-width: em(850)){   
+        @media (max-width: em(991)){   
             margin-bottom: toRem(10);
         }
     }
     // .menu__list
     &__list {
         display: flex;
-        @include adaptiveValue("column-gap", 40, 15, 0, 1400, 850);
+        @include adaptiveValue("column-gap", 40, 15, 0, 1400, 991);
         align-items: center;
         flex-wrap: wrap;
         row-gap: toRem(10);
 
-        @media (max-width: em(850)){
+        @media (max-width: em(991)){
             flex-direction: column;      
             align-items: start;
             &::after {
@@ -173,6 +173,7 @@
     }
     // .menu__item
     &__item {
+
     }
     // .menu__link
     &__link {
@@ -187,15 +188,75 @@
                 text-decoration: underline;
                 text-decoration-skip-ink: none;
                 color: $cyanic;    
+                cursor: pointer;
             }
         }
     }
     &__footer{
         display: none;
-        @media (max-width: em(850)){
+        @media (max-width: em(991)){
             margin-top: toRem(20);
             display: block;
         }
+    }
+    &__dropdown {
+        height: 100%;
+        display: flex;
+            &:hover{
+                .menu__dropdown-content {
+                    display: block;  
+                }
+                .menu__dropBtn {
+                    text-decoration: underline;
+                    text-decoration-skip-ink: none;
+                    color: $cyanic;    
+                    cursor: pointer;    
+                }  
+            }
+    }
+    &__dropBtn {
+        display: block;
+        flex: 1 1 auto;
+        font-weight: 400;
+        font-size: toRem(14);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: $cyanic;    
+                cursor: pointer;
+            }
+        }
+    }
+    &__dropdown-content {
+        display: none;
+        position: absolute;
+        bottom: toRem(-90);
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.2);
+        min-width: 260px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        a {
+            font-size: toRem(14);
+            color: #fff;
+            letter-spacing: 0.04em;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: toRem(10) toRem(16);
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            &:hover {
+                background-color: #555;
+                
+            }
+        }
+    }
+    &__accordion {
     }
 }
 .info-menu {
@@ -225,7 +286,7 @@
                 color: $cyanic;       
             }
         }
-        @media (max-width: em(850)){
+        @media (max-width: em(991)){
               display: none;
         }
     }
@@ -335,7 +396,7 @@
 
 //Burger Icon
 .icon-menu {
-	@media (max-width: em(850)) {
+	@media (max-width: em(991)) {
 		position: relative;
 		width: toRem(30);
 		height: toRem(18);
@@ -382,3 +443,15 @@
 	}
 }
 
+.accordion-item {
+}
+.accordion-title {
+    display: flex;
+    align-items: center;
+    gap: toRem(5);
+    &:not(:last-child) {margin-bottom: toRem(10);}
+}
+.accordion-content {
+    display: grid;
+    gap: toRem(8);
+}

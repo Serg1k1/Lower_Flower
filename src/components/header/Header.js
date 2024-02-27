@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import DropdownMenu from './dropdownMenu/DropdownMenu';
+import Accordion from './accordion/Accordion';
+
 import './header.scss';
 
 import logo from '../../assets/logo.svg';
@@ -44,14 +47,16 @@ const Header = () => {
                             ><span></span></button>
                         </div>
                         <ul className="menu__list">
-                            <li className="menu__item"><a href="#" className="menu__link">Каталог</a></li>
+                            <div class="menu__dropdown">
+                                <button className="menu__dropBtn">Каталог</button>
+                                <DropdownMenu />
+                            </div>
                             <li className="menu__item"><a href="#" className="menu__link">Доставка и оплата</a></li>
                             <li className="menu__item"><a href="#" className="menu__link">О нас</a></li>
                             <li className="menu__item"><a href="#" className="menu__link">Контакты</a></li>
                             <li className="menu__item"><a href="#" className="menu__link">FAQ</a></li>
                         </ul>
                     </nav>
-
                 </div>
                 <div className="header__info info-menu">
                     <div className="menu__search">
@@ -94,7 +99,9 @@ const Header = () => {
                         </div>
                         <ul className="menu__list">
                             <li className="menu__item"><a href="#" className="menu__link">Главная</a></li>
-                            <li className="menu__item"><a href="#" className="menu__link">Каталог</a></li>
+                            <div className="menu__accordion">
+                                <Accordion />
+                            </div>
                             <li className="menu__item"><a href="#" className="menu__link">Доставка и оплата</a></li>
                             <li className="menu__item"><a href="#" className="menu__link">О нас</a></li>
                             <li className="menu__item"><a href="#" className="menu__link">Контакты</a></li>
