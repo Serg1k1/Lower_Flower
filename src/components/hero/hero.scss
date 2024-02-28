@@ -1,0 +1,74 @@
+@import '../../style/mixins.scss';
+@import '../../style/style.scss';
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    @include adaptiveValue("padding-top", 120, 80);
+    @include adaptiveValue("padding-bottom", 800, 100);
+    // .hero__container
+    &__container {
+    }
+    // .hero__body
+    &__body {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @include adaptiveValue("row-gap", 50, 20);
+    }
+    // .hero__titles
+    &__titles {
+        position: relative;
+        font-weight: 300;
+        @include adaptiveValue("font-size", 200, 40);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-family: "Cormorant";
+        color: #fff;
+    }
+    // .hero__title--up
+    &__title--up {
+        position: relative;
+        z-index: 2;
+    }
+    // .hero__title--down
+    &__title--down {
+        position: relative;
+        z-index: 4;
+    }
+    &__text {
+        position: relative;
+        z-index: 4;
+        font-weight: 400;
+        font-size: toRem(20);
+        letter-spacing: 0.02em;
+        text-align: center;
+        color: #fff
+    }
+    &__action {
+        position: relative;
+        z-index: 4;
+    }
+    &__flowers {
+    }
+    &__flower {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 2;
+    }
+    &__flower-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 0;
+    }
+}

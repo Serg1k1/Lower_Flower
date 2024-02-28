@@ -1,11 +1,14 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import Hero from "../hero/Hero";
 
 const App = () => {
     return (
         <>
             <Header />
-            <main className="page"></main>
+            <main className="page">
+                <Hero />
+            </main>
             <Footer />
         </>
 

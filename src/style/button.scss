@@ -1,0 +1,18 @@
+@import './mixins.scss';
+@import './style.scss';
+
+.button {
+    font-weight: 700;
+    font-size: toRem(12);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #040a0a;
+    padding: toRem(16) toRem(50);
+    background-color: $cyanic;
+    transition: all 0.3s ease;
+    &:hover {
+        color: #fff;
+        background-color: $activeColor;
+    }
+}
