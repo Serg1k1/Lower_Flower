@@ -1,10 +1,15 @@
 import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 const App = () => {
     return (
-        <div className="wrapper">
+        <>
             <Header />
-        </div>
+            <main className="page"></main>
+            <Footer />
+        </>
+
+
     )
 }
 

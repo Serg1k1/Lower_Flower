@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import DropdownMenu from './dropdownMenu/DropdownMenu';
 import Accordion from './accordion/Accordion';
+import FooterAccordion from '../footer/footer-accordion/FooterAccordion';
 
 import './header.scss';
 
@@ -47,7 +48,7 @@ const Header = () => {
                             ><span></span></button>
                         </div>
                         <ul className="menu__list">
-                            <div class="menu__dropdown">
+                            <div className="menu__dropdown">
                                 <button className="menu__dropBtn">Каталог</button>
                                 <DropdownMenu />
                             </div>
