@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import DropdownMenu from './dropdownMenu/DropdownMenu';
 import Accordion from './accordion/Accordion';
-import FooterAccordion from '../footer/footer-accordion/FooterAccordion';
+import ShopBtn from '../ui/ShopBtn';
 
 import './header.scss';
 
@@ -18,19 +18,38 @@ import closeIcon from '../../assets/icons//close.svg';
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [focused, setFocused] = useState(false);
+    const [changeTopPos, setChangeTopPos] = useState(false);
 
     const onFocus = () => setFocused(true);
     const onBlur = () => setFocused(false);
 
+    const handleScroll = () => {
+        window.scrollY > 0 ? setChangeTopPos(true) : setChangeTopPos(false);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, {
+            passive: true
+        });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, [])
+
     let clazzBurger = "menu__icon icon-menu";
-    let clazzMenu = "menu__body menu__body--mobile"
+    let clazzMenu = "menu__body menu__body--mobile";
+    let clazzHeader = "header"
 
     if (menuOpen) {
         clazzBurger += " menu-open";
         clazzMenu += " body-open";
     }
+
+    if (changeTopPos) {
+        clazzHeader += ' header--scrolled'
+    }
     return (
-        <header className="header">
+        <header className={clazzHeader}>
             <div className="header__container header__container--desktop">
                 <a href="#" className="header__logo">
                     <img src={logo} alt="logo" />
@@ -62,11 +81,20 @@ const Header = () => {
                 <div className="header__info info-menu">
                     <div className="menu__search">
                         <img className='menu__search--open' src={searchIcon} alt="search icon" />
-                        <input style={focused ? { 'width': '100%' } : { 'width': '100px' }} onFocus={onFocus} onBlur={onBlur} type='text' className="menu__search" placeholder='Поиск' />
+                        <input
+                            style={focused ? { 'width': '100%' } : { 'width': '100px' }}
+                            onFocus={onFocus}
+                            onBlur={onBlur}
+                            type='text'
+                            className="menu__search"
+                            placeholder='Поиск' />
                         <img className='menu__search--close' src={closeIcon} alt="close icon" />
                     </div>
                     <div className="info-menu__content">
-                        <a style={focused ? { 'display': 'none' } : { 'display': 'flex' }} href="tel:375291136969" className="info-menu__call">
+                        <a
+                            style={focused ? { 'display': 'none' } : { 'display': 'flex' }}
+                            href="tel:375291136969"
+                            className="info-menu__call">
                             <img src={phoneOutlined} alt="phone Icon" />
                             <span>+375 (29) 113-69-69</span>
                         </a>
@@ -82,6 +110,7 @@ const Header = () => {
                     type="button" className={clazzBurger}
                     style={menuOpen ? { "opacity": "0", "visibility": "none" } : { "opacity": "1", "visibility": "visible" }}><span></span></button>
                 <div className="header__menu menu menu--mobile">
+                    <h2 className='header__menu-title'>Lower<br />Flower</h2>
                     <nav className={clazzMenu}>
                         <div className="menu__header">
                             <a href="#" className="menu__logo">
@@ -138,10 +167,7 @@ const Header = () => {
                     </nav>
                 </div>
                 <div className="header__shop">
-                    <button className="info-menu__shop">
-                        <img src={shopingCart} className="info-menu__shop-icon" alt='shopinng-cart logo' />
-                        <span className="info-menu__shop-buy">5</span>
-                    </button>
+                    <ShopBtn type={"header"} />
                 </div>
             </div>
         </header>

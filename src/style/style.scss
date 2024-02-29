@@ -91,7 +91,8 @@ body {
 		}
 		@if ($containerPadding>0) {
 			@if ($maxWidthContainer>0) {
-				padding: 0 toRem(math.div($containerPadding, 2));
+				padding-left: toRem(math.div($containerPadding, 2));
+				padding-right: toRem(math.div($containerPadding, 2));
 			} @else {
 				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
 				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);

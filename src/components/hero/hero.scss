@@ -7,6 +7,10 @@
     position: relative;
     @include adaptiveValue("padding-top", 120, 80);
     @include adaptiveValue("padding-bottom", 800, 100);
+    @media (max-width:$tablet){
+        @include adaptiveValue("padding-top", 280, 100);
+        @include adaptiveValue("padding-bottom", 180, 50);     
+    }
     // .hero__container
     &__container {
         position: relative;
@@ -28,6 +32,9 @@
         text-transform: uppercase;
         font-family: "Cormorant";
         color: #fff;
+        @media (max-width:$tablet){
+            display: none;
+        }
     }
     // .hero__title--up
     &__title--up {
@@ -89,5 +96,10 @@
         z-index: 3;
         bottom: 0;
         right: 15%;
+        height: auto;
+        @media (max-width:$tablet){
+            right: 0;
+            @include adaptiveValue("max-width", 350, 100);
+        }
     }
 }

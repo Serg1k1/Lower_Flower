@@ -9,6 +9,9 @@
     text-align: right;
     display: flex;
     flex-direction: column;
+    @media (max-width:$tablet){
+        display: none;
+    }
     // .overlay__contacts
     &__contacts {
         &:not(:last-child) {
@@ -20,7 +23,6 @@
     &__icons {
         display: grid;
         width: toRem(60);
-        grid-template-rows: auto;
         justify-content: center;
         align-self: end;
         padding: toRem(20) toRem(18);
@@ -29,7 +31,7 @@
         backdrop-filter: blur(20px);
         background: rgba(0, 0, 0, 0.2);
         &:not(:last-child) {
-            margin-bottom: toRem(185);
+            margin-bottom: toRem(230);
         }
     }
 
@@ -78,7 +80,8 @@
 }
 .details-overlay {
     display: grid;
-    justify-content: end;
+    justify-items: end;
+    align-items: end;
     // .details-overlay__phone
     &__phone {
         font-weight: 400;
@@ -124,15 +127,39 @@
 
     // .details-overlay__shop
     &__shop {
-        display: grid;
-        justify-content: end;
+        position: relative;
+        display: flex;
+        padding: toRem(15);
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.2);
+        width: toRem(60);
+        height: toRem(60);
+        border-radius: toRem(10);
+        aspect-ratio: 1 / 1;
+        overflow: hidden;  
     }
 
     // .details-overlay__shop-icon
     &__shop-icon {
+        width: toRem(30);
+        height: toRem(30);
     }
 
     // .details-overlay__shop-buy
     &__shop-buy {
+        position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: toRem(9);
+            top: toRem(10);
+            width: toRem(18);
+            height: toRem(18);
+            background-color: $cyanic;
+            border-radius: 50%;
+            font-weight: 400;
+            font-size: toRem(12);
+            letter-spacing: 0.04em;
+            color: #142b2b;
     }
 }

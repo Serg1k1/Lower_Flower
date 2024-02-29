@@ -1,0 +1,57 @@
+@import '../../style/mixins.scss';
+@import '../../style/style.scss';
+
+.shop__btn {
+    position: relative;
+    display: flex;
+    padding: toRem(15);
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.2);
+    width: toRem(60);
+    height: toRem(60);
+    border-radius: toRem(10);
+    aspect-ratio: 1 / 1;
+    overflow: hidden; 
+    transition: all 0.3s ease; 
+    &--header {
+        padding: toRem(12);
+        width: toRem(40);
+        height: toRem(40);   
+        .shop__btn-icon {
+            width: toRem(18);
+            height: toRem(16);    
+        } 
+        .shop__btn-details {
+            width: toRem(13);
+            height: toRem(13);  
+            right: toRem(5);
+            top: toRem(5);
+            font-size: toRem(8);
+        }
+    }
+    @media (any-hover: hover){
+        &:hover{
+            background: rgba(0, 0, 0, 0.7);  
+        }
+    }
+    &-icon {
+        width: toRem(30);
+        height: toRem(30);
+    }
+    &-details {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: toRem(9);
+        top: toRem(10);
+        width: toRem(18);
+        height: toRem(18);
+        background-color: $cyanic;
+        border-radius: 50%;
+        font-weight: 400;
+        font-size: toRem(12);
+        letter-spacing: 0.04em;
+        color: #142b2b;
+    }   
+}

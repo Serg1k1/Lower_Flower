@@ -1,5 +1,7 @@
 import './heroOvarlay.scss'
 
+import ShopBtn from '../ui/ShopBtn';
+
 import instagramLogo from '../../assets/icons/instagram.svg';
 import viberLogo from '../../assets/icons/viber.svg';
 import phoneLogo from '../../assets/icons/phone.svg';
@@ -36,10 +38,7 @@ const HeroOverlay = () => {
                     <img src={phoneOutlined} alt="phone" />
                     <span>заказать звонок</span>
                 </button>
-                <button className="details-overlay__shop">
-                    <img src={shopingCart} className="details-overlay__shop-icon" alt='shopinng-cart logo' />
-                    <span className="details-overlay__shop-buy">5</span>
-                </button>
+                <ShopBtn />
             </div>
         </div>
     )
