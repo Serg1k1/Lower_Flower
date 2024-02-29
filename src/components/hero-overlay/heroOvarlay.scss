@@ -1,0 +1,138 @@
+@import '../../style/mixins.scss';
+@import '../../style/style.scss';
+
+.overlay {
+    position: absolute;
+    @include adaptiveValue("top", -100, -60);
+    right: 0;
+    z-index: 50;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    // .overlay__contacts
+    &__contacts {
+        &:not(:last-child) {
+            margin-bottom: toRem(60);
+        }
+    }
+
+    // .overlay__icons
+    &__icons {
+        display: grid;
+        width: toRem(60);
+        grid-template-rows: auto;
+        justify-content: center;
+        align-self: end;
+        padding: toRem(20) toRem(18);
+        border-radius: toRem(10);
+        gap: toRem(20);
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.2);
+        &:not(:last-child) {
+            margin-bottom: toRem(185);
+        }
+    }
+
+    // .overlay__icon
+    &__icon {
+        width: toRem(25);
+    }
+
+    // .overlay__details
+    &__details {
+    }
+}
+.contacts-overlay {
+    display: grid;
+    gap: toRem(26);
+    // .contacts-overlay__item
+    &__item {
+        
+    }
+
+    // .contacts-overlay__title
+    &__title {
+        font-weight: 400;
+        font-size: toRem(14);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $cyanic;
+        &:not(:last-child) {
+            margin-bottom: toRem(5);
+        }
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // .contacts-overlay__text
+    &__text {
+        font-weight: 300;
+        font-size: toRem(10);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}
+.details-overlay {
+    display: grid;
+    justify-content: end;
+    // .details-overlay__phone
+    &__phone {
+        font-weight: 400;
+        font-size: toRem(16);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $cyanic;
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(8);
+        }
+    }
+
+    // .details-overlay__button
+    &__button {
+        display: flex;
+        align-items: center;
+        gap: toRem(8);
+        line-height: 150%;
+        padding: toRem(10) toRem(18);
+        border-radius: toRem(10);
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.2);
+        font-weight: 400;
+        font-size: toRem(14);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $cyanic;
+        transition: all 0.3s ease;
+        @media (any-hover: hover){
+            &:hover{
+                background: rgba(0, 0, 0, 0.7);    
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(20);
+        }
+    }
+
+    // .details-overlay__shop
+    &__shop {
+        display: grid;
+        justify-content: end;
+    }
+
+    // .details-overlay__shop-icon
+    &__shop-icon {
+    }
+
+    // .details-overlay__shop-buy
+    &__shop-buy {
+    }
+}

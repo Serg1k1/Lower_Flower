@@ -11,8 +11,13 @@
     padding: toRem(16) toRem(50);
     background-color: $cyanic;
     transition: all 0.3s ease;
-    &:hover {
-        color: #fff;
-        background-color: $activeColor;
+    @media (any-hover: hover){
+        &:hover{
+            color: #fff;
+            background-color: $activeColor;    
+        }
+    }
+    @media (max-width:$mobileSmall){
+        padding: toRem(12) toRem(35);      
     }
 }

@@ -9,6 +9,7 @@
     @include adaptiveValue("padding-bottom", 800, 100);
     // .hero__container
     &__container {
+        position: relative;
     }
     // .hero__body
     &__body {
@@ -31,7 +32,7 @@
     // .hero__title--up
     &__title--up {
         position: relative;
-        z-index: 2;
+        z-index: 1;
     }
     // .hero__title--down
     &__title--down {
@@ -42,7 +43,7 @@
         position: relative;
         z-index: 4;
         font-weight: 400;
-        font-size: toRem(20);
+        @include adaptiveValue("font-size", 20, 12);
         letter-spacing: 0.02em;
         text-align: center;
         color: #fff
@@ -70,5 +71,23 @@
         left: 0;
         object-fit: cover;
         z-index: 0;
+    }
+    &__decor-ping {
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        top: 0;
+    }
+    &__decor-green {
+        position: absolute;
+        z-index: 3;
+        left: 5%;
+        top: 15%;     
+    }
+    &__decor-signature {
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        right: 15%;
     }
 }

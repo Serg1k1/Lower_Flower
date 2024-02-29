@@ -454,8 +454,7 @@
     &__title {
         display: flex;
         align-items: center;
-        gap: toRem(5);
-        &:not(:last-child) {margin-bottom: toRem(10);}      
+        gap: toRem(5);   
     }
 
     &__content {
@@ -466,14 +465,19 @@
         }
     }
 
-    &__icon {
+    &__icon-header {
         width: toRem(18);
         height: toRem(18);
+        transform: rotate(90deg);
+        transition: all 0.2s ease;
     }
 }
 
 .accordion__item--opened {
-    .accordion__icon {
+    .accordion__icon-header {
         transform: rotate(270deg);     
+    }
+    .accordion__title {
+        margin-bottom: toRem(10);
     }
 }
