@@ -27,21 +27,20 @@ const Header = () => {
     const onFocus = () => setFocused(true);
     const onBlur = () => setFocused(false);
 
-    console.log(shopPosition.position)
-
     const handleScroll = () => {
         window.scrollY > 0 ? setChangeTopPos(true) : setChangeTopPos(false);
-        (window.scrollY + 20) > shopPosition.position ? setToggleInfo(true) : setToggleInfo(false);
+        (window.scrollY) > shopPosition.position ? setToggleInfo(true) : setToggleInfo(false);
     }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, {
             passive: true
         });
+        console.log(shopPosition.position)
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    }, [])
+    }, [shopPosition.position]);
 
     let clazzBurger = "menu__icon icon-menu";
     let clazzMenu = "menu__body menu__body--mobile";
