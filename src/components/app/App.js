@@ -1,18 +1,8 @@
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
-import Hero from "../hero/Hero";
+import MainPage from "../pages/MainPage";
 
 const App = () => {
     return (
-        <>
-            <Header />
-            <main className="page">
-                <Hero />
-            </main>
-            <Footer />
-        </>
-
-
+        <MainPage />
     )
 }
 

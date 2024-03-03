@@ -6,7 +6,6 @@ import instagramLogo from '../../assets/icons/instagram.svg';
 import viberLogo from '../../assets/icons/viber.svg';
 import phoneLogo from '../../assets/icons/phone.svg';
 import phoneOutlined from '../../assets/icons/phone-outline.svg';
-import shopingCart from '../../assets/icons/shoping-cart.svg';
 
 const HeroOverlay = () => {
     return (

@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 import DropdownMenu from './dropdownMenu/DropdownMenu';
 import Accordion from './accordion/Accordion';
 import ShopBtn from '../ui/ShopBtn';
+import shopContext from './context';
 
 import './header.scss';
 
@@ -16,15 +17,19 @@ import searchIcon from '../../assets/icons/search.svg';
 import closeIcon from '../../assets/icons//close.svg';
 
 const Header = () => {
+    const shopPosition = useContext(shopContext);
+
     const [menuOpen, setMenuOpen] = useState(false);
     const [focused, setFocused] = useState(false);
     const [changeTopPos, setChangeTopPos] = useState(false);
+    const [toggleInfo, setToggleInfo] = useState(false);
 
     const onFocus = () => setFocused(true);
     const onBlur = () => setFocused(false);
 
     const handleScroll = () => {
         window.scrollY > 0 ? setChangeTopPos(true) : setChangeTopPos(false);
+        window.scrollY + 20 > shopPosition.position ? setToggleInfo(true) : setToggleInfo(false);
     }
 
     useEffect(() => {
@@ -38,7 +43,7 @@ const Header = () => {
 
     let clazzBurger = "menu__icon icon-menu";
     let clazzMenu = "menu__body menu__body--mobile";
-    let clazzHeader = "header"
+    let clazzHeader = "header";
 
     if (menuOpen) {
         clazzBurger += " menu-open";
@@ -46,7 +51,11 @@ const Header = () => {
     }
 
     if (changeTopPos) {
-        clazzHeader += ' header--scrolled'
+        clazzHeader += ' header--scrolled';
+    }
+
+    if (toggleInfo) {
+        clazzHeader += ' header--info';
     }
     return (
         <header className={clazzHeader}>
