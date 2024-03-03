@@ -18,7 +18,7 @@ const ShopBtn = ({ type }) => {
         const shopPos = shopPosition.current.getBoundingClientRect().top + window.scrollY;
 
         context.setCoordinates(shopPos);
-    }, [])
+    }, []);
 
     return (
         <button ref={shopPosition} className={clazz}>

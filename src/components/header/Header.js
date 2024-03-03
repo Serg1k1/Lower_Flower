@@ -27,9 +27,11 @@ const Header = () => {
     const onFocus = () => setFocused(true);
     const onBlur = () => setFocused(false);
 
+    console.log(shopPosition.position)
+
     const handleScroll = () => {
         window.scrollY > 0 ? setChangeTopPos(true) : setChangeTopPos(false);
-        window.scrollY + 20 > shopPosition.position ? setToggleInfo(true) : setToggleInfo(false);
+        (window.scrollY + 20) > shopPosition.position ? setToggleInfo(true) : setToggleInfo(false);
     }
 
     useEffect(() => {
