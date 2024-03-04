@@ -6,16 +6,17 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 90;
+    z-index: 49;
     transition: all 0.3s ease;
     &--scrolled {
+        z-index: 90; 
         background-color: #000;
         .header__menu-title {
             @include adaptiveValue("font-size", 40, 30, 0, 991.98, 320);    
         }
         .menu__search {
             flex: 1 1 auto;
-        }
+        }    
     }
     &--info {
         .info-menu__content {

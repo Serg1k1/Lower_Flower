@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import classNames from 'classnames';
 
 import DropdownMenu from './dropdownMenu/DropdownMenu';
 import Accordion from './accordion/Accordion';
@@ -29,35 +30,37 @@ const Header = () => {
 
     const handleScroll = () => {
         window.scrollY > 0 ? setChangeTopPos(true) : setChangeTopPos(false);
-        (window.scrollY) > shopPosition.position ? setToggleInfo(true) : setToggleInfo(false);
+        (window.scrollY + 20) > shopPosition.position ? setToggleInfo(true) : setToggleInfo(false);
     }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, {
             passive: true
         });
-        console.log(shopPosition.position)
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
     }, [shopPosition.position]);
 
-    let clazzBurger = "menu__icon icon-menu";
-    let clazzMenu = "menu__body menu__body--mobile";
-    let clazzHeader = "header";
+    const clazzBurger = classNames({
+        "menu__icon": true,
+        "icon-menu": true,
+        "menu-open": menuOpen
+    })
 
-    if (menuOpen) {
-        clazzBurger += " menu-open";
-        clazzMenu += " body-open";
-    }
+    const clazzMenu = classNames({
+        "menu__body": true,
+        "menu__body--mobile": true,
+        "body-open": menuOpen
+    })
 
-    if (changeTopPos) {
-        clazzHeader += ' header--scrolled';
-    }
+    const clazzHeader = classNames({
+        "header": true,
+        "header--scrolled": changeTopPos,
+        "header--info": toggleInfo
+    })
 
-    if (toggleInfo) {
-        clazzHeader += ' header--info';
-    }
     return (
         <header className={clazzHeader}>
             <div className="header__container header__container--desktop">
