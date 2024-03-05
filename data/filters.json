@@ -1,0 +1,215 @@
+{
+    "filters": [
+        {
+            "catalog": [
+                {
+                    "id": 1,
+                    "name": "popular",
+                    "label": "popular"
+                },
+                {
+                    "id": 2,
+                    "name": "Dry Flowers",
+                    "label": "dryFlower"     
+                },
+                {
+                    "id": 3,
+                    "name": "Bouquets Of Rose",
+                    "label": "bouquetsOfRose"     
+                },
+                {
+                    "id": 4,
+                    "name": "Flower Arrangement",
+                    "label": "flowerArrangement"     
+                },
+                {
+                    "id": 5,
+                    "name": "individual Bouquet",
+                    "label": "individualBouquet"     
+                },
+                {
+                    "id": 6,
+                    "name": "bouquet For The Holiday",
+                    "label": "bouquetForTheHoliday"     
+                },
+                {
+                    "id": 7,
+                    "name": "gift Wrapping",
+                    "label": "giftWrapping"     
+                },
+                {
+                    "id": 8,
+                    "name": "balls",
+                    "label": "ball"     
+                },
+                {
+                    "id": 9,
+                    "name": "postcards",
+                    "label": "postcard"     
+                },
+                {
+                    "id": 10,
+                    "name": "envelopes",
+                    "label": "envelope"     
+                }
+            ],
+            "bouquet": [
+                {
+                    "id": 1,
+                    "name": "for girlfriend",
+                    "label": "girlfriend"
+                },
+                {
+                    "id": 2,
+                    "name": "for men",
+                    "label": "men"
+                },
+                {
+                    "id": 3,
+                    "name": "for wife",
+                    "label": "wife"
+                },
+                {
+                    "id": 4,
+                    "name": "for mother",
+                    "label": "mother"
+                },
+                {
+                    "id": 5,
+                    "name": "for colleague",
+                    "label": "colleague"
+                },
+                {
+                    "id": 6,
+                    "name": "for boss",
+                    "label": "boss"
+                },
+                {
+                    "id": 7,
+                    "name": "for daughter",
+                    "label": "daughter"
+                },
+                {
+                    "id": 8,
+                    "name": "for children",
+                    "label": "children"
+                },
+                {
+                    "id": 9,
+                    "name": "for women",
+                    "label": "women"
+                }
+            ],
+            "filter": {
+                "light": [
+                    {
+                        "id": 1,
+                        "name": "gentle",
+                        "label": "gentle"
+                    },
+                    {
+                        "id": 2,
+                        "name": "bright",
+                        "label": "bright"
+                    }
+                ],
+                "color": [
+                    {
+                        "id": 1,
+                        "name": "white",
+                        "label": "white"    
+                    },
+                    {
+                        "id": 2,
+                        "name": "yellow",
+                        "label": "yellow"    
+                    },
+                    {
+                        "id": 3,
+                        "name": "green",
+                        "label": "green"    
+                    },
+                    {
+                        "id": 4,
+                        "name": "red",
+                        "label": "red"    
+                    },
+                    {
+                        "id": 5,
+                        "name": "orange",
+                        "label": "orange"    
+                    },
+                    {
+                        "id": 6,
+                        "name": "pink",
+                        "label": "pink"    
+                    },
+                    {
+                        "id": 7,
+                        "name": "blue",
+                        "label": "blue"    
+                    }
+                ],
+                "format": [
+                    {
+                        "id": 1,
+                        "name": "bouquet",
+                        "label": "bouquet"    
+                    },
+                    {
+                        "id": 2,
+                        "name": "in a vase",
+                        "label": "in a vase"    
+                    },
+                    {
+                        "id": 3,
+                        "name": "in an envelope",
+                        "label": "in an envelope"    
+                    },
+                    {
+                        "id": 4,
+                        "name": "in the basket",
+                        "label": "in the basket"    
+                    },
+                    {
+                        "id": 5,
+                        "name": "in a hat box",
+                        "label": "in a hat box"    
+                    },
+                    {
+                        "id": 6,
+                        "name": "in a box",
+                        "label": "in a box"    
+                    }
+                ],
+                "flower": [
+                    {
+                        "id": 1,
+                        "name": "Alstroemeria",
+                        "label": "Alstroemeria"    
+                    },  
+                    {
+                        "id": 2,
+                        "name": "Anthurium",
+                        "label": "Anthurium"    
+                    },  
+                    {
+                        "id": 3,
+                        "name": "Asparagus",
+                        "label": "Asparagus"    
+                    },  
+                    {
+                        "id": 4,
+                        "name": "Astilba",
+                        "label": "Astilba"    
+                    }, 
+                    {
+                        "id": 5,
+                        "name": "Astrantia",
+                        "label": "Astrantia"    
+                    }
+                ]
+            }
+        }
+    ]
+}

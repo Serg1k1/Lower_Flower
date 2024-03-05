@@ -11,8 +11,38 @@
                 "light": ["gentle", "bright"],
                 "color": ["white", "yellow", "green", "red", "orange", "pink", "blue"],
                 "format": ["bouquet", "in a vase", "in an envelope", "in the basket", "in a hat box", "in a box"],
-                "flower": ["Alstroemeria", "Anthurium", "Asparagus", "Astilba", "Astrantia"]
-            }       
+                "flower": ["Alstroemeria", "Anthurium", "Asparagus", "Astilba", "Astrantia"],
+                "catalog": ["popular", "dryFlower", "bouquetsOfRose", "flowerArrangement", "individualBouquet", "bouquetForTheHoliday", "giftWrapping", "ball", "postcard", "envelope"],
+                "bouquet": ["girlfriend", "men", "wife", "mother", "colleague", "boss", "daughter", "children", "women"] 
+            },
+            "compound": ["Carnation (Dianthus)", "Leucodendron", "Leucospermum (Nutan)", "Lotus", "Rose"],
+            "description": "The mesmerizing depth of your feelings is conveyed by the fiery colors of this bouquet",
+            "sliderPhotos": ["https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg", 
+                            "https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg",
+                            "https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg",
+                            "https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg"]
+        },
+        {
+            "id": 2,
+            "name": "Best day",
+            "price": 10,
+            "thumbnail": "https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg",
+            "popular": true,
+            "label": "new",
+            "categories": {
+                "light": ["gentle", "bright"],
+                "color": ["white", "yellow", "green", "red", "orange", "pink", "blue"],
+                "format": ["bouquet", "in a vase", "in an envelope", "in the basket", "in a hat box", "in a box"],
+                "flower": ["Alstroemeria", "Anthurium", "Asparagus", "Astilba", "Astrantia"],
+                "catalog": ["popular", "dryFlower", "bouquetsOfRose", "flowerArrangement", "individualBouquet", "bouquetForTheHoliday", "giftWrapping", "ball", "postcard", "envelope"],
+                "bouquet": ["girlfriend", "men", "wife", "mother", "colleague", "boss", "daughter", "children", "women"] 
+            },
+            "compound": ["Carnation (Dianthus)", "Leucodendron", "Leucospermum (Nutan)", "Lotus", "Rose"],
+            "description": "The mesmerizing depth of your feelings is conveyed by the fiery colors of this bouquet",
+            "sliderPhotos": ["https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg", 
+                            "https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg",
+                            "https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg",
+                            "https://t4.ftcdn.net/jpg/02/95/78/61/360_F_295786114_CoJ9uyQLH8jZOthjMHLU8arG0D6bjkmm.jpg"]
         }
     ]
 }
