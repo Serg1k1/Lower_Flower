@@ -5,6 +5,7 @@ import shopContext from '../header/context';
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Hero from "../hero/Hero";
+import CatalogMainPage from "../catalogMainPage/CatalogMainPage";
 
 const MainPage = () => {
     const [shopCoordinates, SetShopCoordinates] = useState({
@@ -24,6 +25,7 @@ const MainPage = () => {
                 <Header />
                 <main className="page">
                     <Hero />
+                    <CatalogMainPage />
                 </main>
             </Provider>
             <Footer />

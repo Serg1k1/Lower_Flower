@@ -84,12 +84,18 @@
         z-index: 3;
         right: 0;
         top: 0;
+        @media (max-width:$tablet){
+            display: none;
+        }
     }
     &__decor-green {
         position: absolute;
         z-index: 3;
         left: 5%;
-        top: 15%;     
+        top: 15%;  
+        @media (max-width:$tablet){
+            display: none;
+        }   
     }
     &__decor-signature {
         position: absolute;
