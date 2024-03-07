@@ -261,7 +261,7 @@
     &__dropdown-content {
         display: none;
         position: absolute;
-        bottom: toRem(-90);
+        top: toRem(60);
         backdrop-filter: blur(20px);
         background: rgba(0, 0, 0, 0.2);
         min-width: 260px;
@@ -484,7 +484,7 @@
 
     &__content {
         display: none;
-        gap: toRem(8);
+        gap: toRem(12);
         &-opened {
             display: grid;    
         }

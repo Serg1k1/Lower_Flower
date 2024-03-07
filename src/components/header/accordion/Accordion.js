@@ -1,3 +1,4 @@
+import { useGetAllCatalogQuery } from '../../api/filtersApiSlice';
 import { useState } from 'react';
 
 import '../header.scss';
@@ -6,11 +7,26 @@ import arrow from '../../../assets/icons/arrow.svg';
 const Accordion = () => {
     const [isActive, setIsActive] = useState(false);
 
+    const {
+        data: catalog = []
+    } = useGetAllCatalogQuery();
+
+
     let clazz = 'accordion__content';
 
     if (isActive) {
         clazz += ' accordion__content-opened'
     }
+
+    const renderMenu = (arr) => {
+        return arr.map((item) => {
+            return (
+                <a key={item.id} href="#">{item.name}</a>
+            )
+        })
+    }
+
+    const elements = renderMenu(catalog);
 
     return (
         <div className={isActive ? 'accordion__item accordion__item--opened' : 'accordion__item'}>
@@ -19,9 +35,7 @@ const Accordion = () => {
                 <img className="accordion__icon-header" src={arrow} alt="arrow icon" />
             </div>
             <div className={clazz}>
-                <a href="#">Menu 1</a>
-                <a href="#">Menu 2</a>
-                <a href="#">Menu 3</a>
+                {elements}
             </div>
         </div>
     )
