@@ -1,17 +1,17 @@
 import { useState } from "react";
+import classNames from 'classnames';
 
 import '../footer.scss'
 
 import arrow from '../../../assets/icons/arrow.svg'
 
-const FooterAccordion = ({ title }) => {
+const FooterAccordion = ({ title, elements }) => {
     const [isActive, setIsActive] = useState(false);
 
-    let clazz = 'accordion__menu';
-
-    if (isActive) {
-        clazz += ' accordion__menu-opened'
-    }
+    const clazz = classNames({
+        'accordion__menu': true,
+        'accordion__menu-opened': isActive
+    })
 
     return (
         <div className={isActive ? 'accordion__item accordion__item--opened' : 'accordion__item'}>
@@ -20,9 +20,7 @@ const FooterAccordion = ({ title }) => {
                 <img className="accordion__icon" src={arrow} alt="arrow" />
             </div>
             <div className={clazz}>
-                <a className="footer__text" href="#">Menu 1</a>
-                <a className="footer__text" href="#">Menu 2</a>
-                <a className="footer__text" href="#">Menu 3</a>
+                {elements}
             </div>
         </div>
     )

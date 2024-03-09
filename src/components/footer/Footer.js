@@ -1,3 +1,6 @@
+import { useDynamicAdapt } from '../hooks/useDynamicAdapt';
+import { useGetAllCatalogQuery, useGetAllBouquetsQuery } from '../api/filtersApiSlice';
+
 import './footer.scss';
 
 import FooterAccordion from '../footer/footer-accordion/FooterAccordion';
@@ -8,6 +11,28 @@ import viberLogo from '../../assets/icons/viber.svg';
 import phoneLogo from '../../assets/icons/phone.svg';
 
 const Footer = () => {
+    useDynamicAdapt();
+
+    const {
+        data: catalog = []
+    } = useGetAllCatalogQuery();
+
+    const {
+        data: bouquets = []
+    } = useGetAllBouquetsQuery();
+
+
+    const renderItems = (arr) => {
+        return arr.map((item) => {
+            return (
+                <a key={item.id} href="#">{item.name}</a>
+            )
+        })
+    }
+
+    const catalogItems = renderItems(catalog);
+    const bouquetItems = renderItems(bouquets);
+
     return (
         <footer className="footer">
             <div className="footer__container">
@@ -15,7 +40,7 @@ const Footer = () => {
                     <a href="#" className="footer__logo">
                         <img src={logo} alt="logo" />
                     </a>
-                    <div className="footer__data">
+                    <div data-da=".footer__info,580,last" className="footer__data">
                         <h4 className="footer__title">реквизиты</h4>
                         <div className="footer__text">
                             <p>
@@ -28,10 +53,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer__catalog">
-                    <FooterAccordion title={'Каталог'} />
+                    <FooterAccordion elements={catalogItems} title={'Каталог'} />
                 </div>
                 <div className="footer__catalog">
-                    <FooterAccordion title={'Букет'} />
+                    <FooterAccordion elements={bouquetItems} title={'Букет'} />
                 </div>
                 <nav className="footer__menu menu-footer">
                     <ul className="menu-footer__list">

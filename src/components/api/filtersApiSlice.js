@@ -7,7 +7,10 @@ export const filtersApiSlice = createApi({
         getAllCatalog: builder.query({
             query: () => "/catalog"
         }),
+        getAllBouquets: builder.query({
+            query: () => "/bouquet"
+        })
     })
 })
 
-export const { useGetAllCatalogQuery } = filtersApiSlice;
+export const { useGetAllCatalogQuery, useGetAllBouquetsQuery } = filtersApiSlice;

@@ -4,7 +4,7 @@
 .overlay {
     position: absolute;
     @include adaptiveValue("top", -100, -60);
-    right: 0;
+    right: toRem(15);
     z-index: 50;
     text-align: right;
     display: flex;

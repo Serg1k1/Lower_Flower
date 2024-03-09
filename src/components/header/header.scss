@@ -488,6 +488,9 @@
         &-opened {
             display: grid;    
         }
+        text-transform: uppercase;
+        font-weight: 300;
+        line-height: 150%;
     }
 
     &__icon-header {

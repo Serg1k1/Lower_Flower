@@ -1,5 +1,6 @@
 import { useGetAllCatalogQuery } from '../../api/filtersApiSlice';
 import { useState } from 'react';
+import classNames from 'classnames';
 
 import '../header.scss';
 import arrow from '../../../assets/icons/arrow.svg';
@@ -11,12 +12,10 @@ const Accordion = () => {
         data: catalog = []
     } = useGetAllCatalogQuery();
 
-
-    let clazz = 'accordion__content';
-
-    if (isActive) {
-        clazz += ' accordion__content-opened'
-    }
+    const clazz = classNames({
+        'accordion__content': true,
+        'accordion__content-opened': isActive
+    })
 
     const renderMenu = (arr) => {
         return arr.map((item) => {
