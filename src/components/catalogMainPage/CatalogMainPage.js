@@ -7,7 +7,7 @@ const CatalogMainPage = () => {
     return (
         <section className="catalog">
             <div className="catalog__container">
-                <h2 className="catalog__title">каталог</h2>
+                <h2 className="catalog__title main__title">каталог</h2>
                 <div className="catalog__items">
                     <div className="catalog__row">
                         <div className="catalog__item item-catalog item-catalog--text">

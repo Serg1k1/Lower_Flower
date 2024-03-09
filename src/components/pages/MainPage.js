@@ -6,6 +6,7 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Hero from "../hero/Hero";
 import CatalogMainPage from "../catalogMainPage/CatalogMainPage";
+import PopularMainPage from "../popularMainPage/PopularMainPage";
 
 const MainPage = () => {
     const [shopCoordinates, SetShopCoordinates] = useState({
@@ -26,6 +27,7 @@ const MainPage = () => {
                 <main className="page">
                     <Hero />
                     <CatalogMainPage />
+                    <PopularMainPage />
                 </main>
             </Provider>
             <Footer />
