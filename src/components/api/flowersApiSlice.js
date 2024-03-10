@@ -4,15 +4,15 @@ export const flowersApiSlice = createApi({
     reducerPath: "flowersApi",
     baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/" }),
     endpoints: builder => ({
-        getAllPopularFlowers: builder.query({
+        getAllFlowers: builder.query({
             query: () => "/flowers",
 
-            transformResponse: (response) => {
-                const filteredFlowers = response.filter((item) => item.popular === 'true');
-                return filteredFlowers.slice(0, 12);
-            }
+            // transformResponse: (response) => {
+            //     const filteredFlowers = response.filter((item) => item.popular === 'true');
+            //     return filteredFlowers.slice(0, 12);
+            // }
         }),
     })
 })
 
-export const { useGetAllPopularFlowersQuery } = flowersApiSlice;
+export const { useGetAllFlowersQuery } = flowersApiSlice;

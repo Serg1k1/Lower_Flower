@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useGetAllPopularFlowersQuery } from '../api/flowersApiSlice';
+import { useGetAllFlowersQuery } from '../api/flowersApiSlice';
 import { useDynamicAdapt } from '../hooks/useDynamicAdapt';
 
 import classNames from 'classnames';
@@ -17,12 +17,16 @@ const PopularMainPage = () => {
 
     const {
         data: flowers = [],
-        isSuccess
-    } = useGetAllPopularFlowersQuery();
+    } = useGetAllFlowersQuery(undefined, {
+        selectFromResult: ({ data }) => ({
+            data: data?.filter((item) => item.popular === 'true').slice(0, 12)
+        })
+    });
 
     useDynamicAdapt();
 
     const settings = {
+        lazyload: true,
         nav: false,
         mouseDrag: true,
         loop: false,
