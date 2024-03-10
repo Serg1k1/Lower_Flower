@@ -12,7 +12,7 @@
 
 .main__text {
     font-weight: 300;
-    font-size: 20px;
+    @include adaptiveValue("font-size", 20, 14);
     line-height: 130%;
     letter-spacing: 0.04em;
     color: #fff;

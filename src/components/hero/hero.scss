@@ -70,6 +70,7 @@
         left: 0;
         object-fit: cover;
         z-index: 2;
+        pointer-events: none;
     }
     &__flower-bg {
         position: absolute;
@@ -79,12 +80,14 @@
         left: 0;
         object-fit: cover;
         z-index: 0;
+        pointer-events: none;
     }
     &__decor-ping {
         position: absolute;
         z-index: 3;
         right: 0;
         top: 0;
+        pointer-events: none;
         @media (max-width:$tablet){
             display: none;
         }
@@ -94,6 +97,7 @@
         z-index: 3;
         left: 5%;
         top: 15%;  
+        pointer-events: none;
         @media (max-width:$tablet){
             display: none;
         }   
@@ -104,6 +108,7 @@
         bottom: 0;
         right: 15%;
         height: auto;
+        pointer-events: none;
         @media (max-width:$tablet){
             right: 0;
             @include adaptiveValue("max-width", 350, 100);

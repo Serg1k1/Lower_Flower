@@ -3,7 +3,7 @@
 
 .catalog {
     @include adaptiveValue("padding-top", 100, 40);
-    @include adaptiveValue("padding-bottom", 200, 80);
+    @include adaptiveValue("padding-bottom", 100, 50);
     position: relative;
     // .catalog__container
     &__container {
@@ -118,6 +118,7 @@
 }
 
 .decor-catalog {
+    pointer-events: none;
     &__text {
         font-weight: 700;
         font-size: 200px;
@@ -133,7 +134,7 @@
         position: absolute;
         top: 15%;
         right: -5%;
-        z-index: -1;
+        z-index: -1;   
     }
     &--flowers {
         position: absolute;

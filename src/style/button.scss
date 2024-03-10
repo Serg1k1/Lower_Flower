@@ -20,4 +20,17 @@
     @media (max-width:$mobileSmall){
         padding: toRem(12) toRem(35);      
     }
+    &--outlined {
+        color: #fff;
+        background-color: transparent;
+        border: toRem(1) solid #fff;  
+        @media (any-hover: hover){
+            &:hover{
+                color: #040a0a;
+                background-color: $cyanic;  
+                border: toRem(1) solid $cyanic;  
+            }
+        }  
+    }
+    
 }
