@@ -13,17 +13,18 @@ import arrow from '../../assets/popularMainPage/arrow.svg';
 import sliderBg from '../../assets/popularMainPage/bg.jpg';
 
 const PopularMainPage = () => {
+    useDynamicAdapt();
     const sliderRef = useRef();
 
     const {
         data: flowers = [],
+        isSuccess,
+        isError
     } = useGetAllFlowersQuery(undefined, {
         selectFromResult: ({ data }) => ({
             data: data?.filter((item) => item.popular === 'true').slice(0, 12)
         })
     });
-
-    useDynamicAdapt();
 
     const settings = {
         lazyload: true,
@@ -47,7 +48,6 @@ const PopularMainPage = () => {
     const onGoTo = (dir) => sliderRef.current.slider.goTo(dir);
 
     const renderSliderItems = (arr) => {
-
         return arr.map((item) => {
             const labelClazz = classNames({
                 "slider-popular__label": true,
@@ -65,12 +65,16 @@ const PopularMainPage = () => {
                     </div>
                     <div className="slider-popular__body">
                         <h4 className="slider-popular__title">{item.name}</h4>
-                        <div className="slider-popular__price">{item.price}</div>
+                        <div className="slider-popular__price">{item.price}$</div>
                         <button className="slider-popular__button button button--outlined">В корзину</button>
                     </div>
                 </div>
             )
         })
+    }
+
+    if ((flowers.length <= 3 && isSuccess) || isError) {
+        return null;
     }
 
     const sliderItems = renderSliderItems(flowers);
@@ -91,7 +95,6 @@ const PopularMainPage = () => {
                     <TinySlider ref={sliderRef} settings={settings} className="popular__slider slider-popular">
                         {sliderItems}
                     </TinySlider>
-
                 </div>
                 <div data-da=".popular-slider__wrapper,1320,first" className="slider__buttons">
                     <button onClick={() => onGoTo('prev')} className="slider__button slider__button--prev">
