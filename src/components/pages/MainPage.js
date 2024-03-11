@@ -7,6 +7,7 @@ import Footer from "../footer/Footer";
 import Hero from "../hero/Hero";
 import CatalogMainPage from "../catalogMainPage/CatalogMainPage";
 import PopularMainPage from "../popularMainPage/PopularMainPage";
+import HowMainPage from "../howMainPage/HowMainPage";
 
 const MainPage = () => {
     const [shopCoordinates, SetShopCoordinates] = useState({
@@ -28,6 +29,7 @@ const MainPage = () => {
                     <Hero />
                     <CatalogMainPage />
                     <PopularMainPage />
+                    <HowMainPage />
                 </main>
             </Provider>
             <Footer />

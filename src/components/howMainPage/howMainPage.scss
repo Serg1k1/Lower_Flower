@@ -1,0 +1,139 @@
+@import '../../style/mixins.scss';
+@import '../../style/style.scss';
+
+.how {
+    @include adaptiveValue("padding-top", 80, 40);
+    @include adaptiveValue("padding-bottom", 80, 40);
+    position: relative;
+    // .how__container
+    &__container {
+        display: grid;
+    }
+
+    // .how__title
+    &__title {
+        z-index: -2;
+        &:not(:last-child) {
+            margin-bottom: toRem(40);    
+        }
+        @media (max-width:$mobileSmall){
+             text-align: center; 
+        }
+        
+    }
+
+    // .how__content
+    &__content {
+    }
+    &__decor {
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        @include adaptiveValue("top", 90, 200, 0, 1600, 991);
+        @include adaptiveValue("top", 160, 90, 0, 991, 320);
+        // @media (max-width:$tablet){
+        //     top: toRem(160);
+        // }
+        img {
+            width: 100%;
+            @media (max-width: em(1365)){
+                width: 75%;      
+            }
+            @media (max-width: em(1000)){
+                width: 50%;      
+            }
+            @media (max-width: em(600)){
+                width: 30%;
+            }
+        }
+    }
+}
+.content-how {
+    display: flex;
+    @include adaptiveValue("gap", 115, 30, 0, 1600, 991);
+    width: 63%;
+    justify-self: end;
+    @media (max-width:$mobile){
+        flex-direction: column; 
+        width: 100%;
+    }
+    // .content-how__row
+    &__row {
+        display: grid;
+        row-gap: toRem(40);
+        &:last-child {
+            align-self: center;
+        }     
+    }
+
+    // .content-how__item
+    &__item {
+        @media (max-width:$mobile){
+            max-width: toRem(300); 
+        }
+        &--first {
+            position: relative;
+            @media (max-width:$mobile){
+                justify-self: end; 
+                @media (max-width:$mobileSmall){
+                    max-width: toRem(200); 
+                }
+            }
+            &::before {
+                content: '';
+                width: 65px;
+                height: 10px;
+                background-color: $pink;
+                position: absolute;
+                @include adaptiveValue("top", -40, -20);
+            }
+        }
+        &--second {
+            @media (max-width:$mobile){
+                justify-self: end; 
+                margin-right: toRem(50);
+            }
+        }
+        &--third {
+            @media (max-width:$mobile){
+                justify-self: end; 
+                margin-right: toRem(80);
+            }
+        }
+        &--fourth {
+            @media (max-width:$mobile){
+                max-width: 100%;
+                width: 100%;     
+            }   
+        }
+        &--fifth {
+            @media (max-width:$mobile){
+                max-width: 100%;
+                width: 100%;     
+            }   
+        }
+        
+    }
+
+    // .content-how__title
+    &__title {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 30, 20);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $pink;
+        &:not(:last-child) {
+            margin-bottom: toRem(12);
+        }
+    }
+
+    // .content-how__text
+    &__text {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: toRem(14);
+        line-height: 121%;
+        letter-spacing: 0.04em;
+        color: #fff;
+    }
+}
