@@ -1,6 +1,7 @@
 import './howMainPage.scss';
 
 import flowerBg from '../../assets/how/flowers-bg.png';
+import signature from '../../assets/hero/decor-signature.svg';
 
 const HowMainPage = () => {
     return (
@@ -44,8 +45,11 @@ const HowMainPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="how__decor">
-                <img src={flowerBg} alt="flower background" />
+            <div className='how__decor-wrapper'>
+                <div className="how__decor">
+                    <img className='how__decor-bg' src={flowerBg} alt="flower background" />
+                </div>
+                <img className='how__decor-signature' src={signature} alt="signature" />
             </div>
         </section>
     )

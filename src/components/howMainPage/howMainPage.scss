@@ -3,7 +3,7 @@
 
 .how {
     @include adaptiveValue("padding-top", 80, 40);
-    @include adaptiveValue("padding-bottom", 80, 40);
+    @include adaptiveValue("padding-bottom", 160, 80);
     position: relative;
     // .how__container
     &__container {
@@ -26,6 +26,7 @@
     &__content {
     }
     &__decor {
+        pointer-events: none;
         z-index: -1;
         position: absolute;
         left: 0;
@@ -34,7 +35,7 @@
         // @media (max-width:$tablet){
         //     top: toRem(160);
         // }
-        img {
+        &-bg {
             width: 100%;
             @media (max-width: em(1365)){
                 width: 75%;      
@@ -44,6 +45,17 @@
             }
             @media (max-width: em(600)){
                 width: 30%;
+            }
+        }
+        &-signature {
+            pointer-events: none;
+            position: absolute;
+            bottom: 0;
+            right: 20%;
+            width: toRem(200);
+            height: auto;
+            @media (max-width:$mobile){
+                display: none; 
             }
         }
     }
